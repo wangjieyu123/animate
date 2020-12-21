@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标特效</title>
+		<link rel="stylesheet" type="text/css" href="../css/mouseEffect.css"/>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.addEventListener('mousemove',e=>{
+				let body=document.querySelector('body');
+				let bubbles=document.createElement('span');
+				bubbles.setAttribute('class','s');
+				let x=e.offsetX; //获取鼠标的x坐标
+				let y=e.offsetY;//获取鼠标的y坐标
+				bubbles.style.left=x+'px';
+				bubbles.style.top=y+'px';
+				let size=Math.random()*50;
+				console.log('size:',size);
+				bubbles.style.width=size+'px';
+				bubbles.style.height=size+'px';
+				body.appendChild(bubbles);
+				setTimeout(()=>{
+					bubbles.remove();
+				},2000)
+				
+			})
+		</script>
+	</body>
+</html>

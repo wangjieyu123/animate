@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>视频滑块特效</title>
+		<link rel="stylesheet" type="text/css" href="../css/videoSliderEffect.css"/>
+	</head>
+	<body>
+		<section>
+			<video  id="slider" autoplay muted loop>
+				<source src="https://klxxcdn.oss-cn-hangzhou.aliyuncs.com/histudy/hrm/media/video1.mp4" type="video/mp4"></source>
+			</video>
+			<ul class="nav" >
+				<li onclick="videoUrl(1)"><img src="../img/video1.png" ></li>
+				<li onclick="videoUrl(2)"><img src="../img/video2.png" ></li>
+				<li onclick="videoUrl(3)"><img src="../img/video3.png" ></li>
+				<li onclick="videoUrl(4)"><img src="../img/video4.png" ></li>
+			</ul>
+		</section>
+		<script type="text/javascript">
+			function get(item){
+				return document.querySelector(item);
+			}
+			let silder=get('#slider');
+			function videoUrl(url){
+				slider.src=`https://klxxcdn.oss-cn-hangzhou.aliyuncs.com/histudy/hrm/media/video${url}.mp4`;
+			}
+		</script>
+	</body>
+</html>

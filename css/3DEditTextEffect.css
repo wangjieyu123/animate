@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: rgba(255,0,0,0.7);
+	
+	overflow-x:hidden ;
+}
+h1{
+	position: relative;
+	color: #fff;
+	font-size: 10em;
+	line-height: 1.1em;
+	outline: none;
+	text-align: center;
+	user-select: none;
+	/* 
+	rotate(-10deg)  往左旋转
+	skewX(20deg) 往右扭曲
+	*/
+	transform: skewX(20deg)  rotate(-10deg); 
+	text-shadow: -1px  1px #cacaca,
+				-2px  2px #cacaca,
+				-3px  3px #cacaca,
+				-4px  4px #cacaca,
+				-5px  5px #cacaca,
+				-6px  6px #cacaca,
+				-7px  7px #cacaca,
+				-8px  8px #cacaca
+	 ;
+}

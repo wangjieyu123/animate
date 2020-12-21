@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/validateEmail.css"/>
+	</head>
+	<body>
+		<div>
+			<h3>EmailValidation Check</h3>
+			<form action="#" id="form">
+				<div class="inputBox">
+					<input type="text" name="" id="email" placeholder="请输入邮箱地址" />
+				</div>
+				<span id="text"></span>
+			</form>
+		</div>
+		<script type="text/javascript">
+			function get(item){
+				return document.querySelector(item)
+			}
+			let mail=get('#email');
+			mail.onkeyup=validate;
+			function validate(){
+				let form=get('#form');
+				let email=get('#email').value;
+				console.log('email:',email.length);
+				let text=get('#text');
+				let test=/^[^ ]+@[^ ]+\.[a-z]{2,3}/;
+				
+				if(email.match(test)){
+					form.classList.add('valid');
+					form.classList.remove('invalid');
+					text.innerText='你输入的邮箱是合法的！';
+					text.style.color='#00ff00';
+				}else{
+					form.classList.remove('valid');
+					form.classList.add('invalid');
+					text.innerText='请输入正确的邮箱！';
+					text.style.color='#ff0000';
+				}
+				if(email.length===0){
+					form.classList.remove('valid');
+					form.classList.remove('invalid');
+					text.innerText="      ";
+					console.log('text:',text.innerText);
+					console.log('我的长度为0了');
+				}
+			}
+		</script>
+	</body>
+</html>

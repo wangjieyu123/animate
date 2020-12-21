@@ -1,0 +1,107 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+	gap: 50px;
+	background-color: #000;
+}
+a{
+	position: relative;
+	display: inline-block;
+	padding: 25px 30px;
+	text-decoration: none;
+	color: #03e9f4;
+	transition: 0.5s;
+	letter-spacing: 4px;
+	overflow: hidden;
+}
+a:hover{
+	background-color: #03E9F4;
+	color: #000;
+	box-shadow: 0 0 5px #03E9F4,
+				0 0 25px #03E9F4,
+				0 0 50px #03E9F4,
+				0 0 200px #03E9F4;
+}
+a span{
+	position: absolute;
+	display: block;
+}
+/* 上面的那条线 */
+a span:nth-child(1){
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(to right,transparent,#03E9F4);
+	animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+	0%{
+		left: -100%;
+	}
+	50%,100%{
+		left:100%;
+	}
+}
+/* 右边的那条线 */
+a span:nth-child(2){
+	top: 0;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(92deg,transparent,#03E9F4);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+@keyframes animate2{
+	0%{
+		top: -100%;
+	}
+	50%,100%{
+		top:100%;
+	}
+}
+/* 下面的那条线 */
+a span:nth-child(3){
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(92deg,transparent,#03E9F4);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes animate3{
+	0%{
+		right: -100%;
+	}
+	50%,100%{
+		right:100%;
+	}
+}
+/* 最左边的那条线 */
+a span:nth-child(4){
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(270deg,transparent,#03E9F4);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+@keyframes animate4{
+	0%{
+		bottom: -100%;
+	}
+	50%,100%{
+		bottom:100%;
+	}
+}

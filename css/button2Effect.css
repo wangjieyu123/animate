@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	flex-direction: column;
+}
+.container a{
+	text-decoration: none;
+	position: relative;
+	width: 300px;
+	height: 75px;
+	line-height: 75px;
+	font-size: 24px;
+	color: #000;
+	display: inline-block;
+	text-align: center;
+	transition: 0.5s;
+
+	
+}
+.container a:hover{
+	color: #fff;
+}
+.container a::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/paintBrush.png);
+	background-size: 100% 100%;
+	transition: 0.5s;
+	/* 上 右 下 左 四个点*/
+	clip: rect(0,0,75px,0);
+}
+.container a:hover:before{
+	clip: rect(0,300px,75px,0);
+}
+.container a span{
+	position: relative;
+	z-index: 1;
+}

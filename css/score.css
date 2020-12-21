@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #000;
+}
+img{
+	width: 120px;
+	height: 120px;
+}
+.box h2{
+	color: #FFFFFF;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.rating input{
+	display: none;
+}
+.rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rating label {
+	/* filter:grayscale将图片过滤成灰色 */
+  filter: grayscale(1);
+  opacity: 0.5;
+  height: 120px;
+  width: 0;
+  opacity: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.rating:hover label {
+	opacity: 0.5;
+	width: 120px;
+}
+.rating label:hover,.rating input:checked + label{
+	opacity: 1;
+	filter: grayscale(0);
+	width: 120px;
+}
+.rating h4{
+	color: #FFFFFF;
+	text-align: center;
+	margin-right: 10px;
+	transform: translateY(-50px) scale(0);
+	transition: 0.5s;
+}
+
+.rating label:hover h4,.rating input:checked + label h4{
+	transform: translateY(0px) scale(1);
+}

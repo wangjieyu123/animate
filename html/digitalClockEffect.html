@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数字时钟特效</title>
+		<link rel="stylesheet" type="text/css" href="../css/digitalClockEffect.css"/>
+	</head>
+	<body>
+		<div id="clock">
+			<h2>现在是北京时间</h2>
+			<div class="time">
+				<div>
+					<span id="hour">00</span>
+				    <span>Hours</span>
+				</div>
+				<div>
+					<span id="minute">00</span>
+				    <span>minutes</span>
+				</div>
+				<div>
+					<span id="second">00</span>
+				    <span>seconds</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function twoNum(num){
+				return num<10?`0${num}`:num;
+			}
+			function get(item){
+				return document.querySelector(item);
+			}
+			function clock(){
+				let hour=get('#hour');
+				let minute=get('#minute');
+				let second=get('#second');
+				let d=new Date();
+				hour.innerText=twoNum(d.getHours());
+				minute.innerText=twoNum(d.getMinutes());
+				second.innerText=twoNum(d.getSeconds());
+			}
+			let interval;
+			interval=setInterval(()=>{
+				clock()
+			},1000)
+		</script>
+	</body>
+</html>
