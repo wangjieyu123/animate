@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹出框与模糊背影的特效</title>
+		<link rel="stylesheet" type="text/css" href="../css/popUpFuzzyBack.css"/>
+	</head>
+	<body>
+		<div class="container" id="blur">
+			<div class="content">
+				<h2>我不是什么大牛，我其实想做的就是一个传播者。内容可能过于基础，但对于刚入门的人来说或许是一个窗口，一个解惑之窗。我要先坚持分享20年，大家来一起见证吧。我不是什么大牛，我其实想做的就是一个传播者。内容可能过于基础，但对于刚入门的人来说或许是一个窗口，一个解惑之窗。我要先坚持分享20年，大家来一起见证吧。</h2>
+				<img src="../img/bg.jpeg" >
+				<a href="#" onclick="toggle()">Read More</a>
+			</div>
+		</div>
+		<div id="popup">
+			<h2>我不是什么大牛，我就是一个传播者</h2>
+			<p>我不是什么大牛，我其实想做的就是一个传播者。内容可能过于基础，但对于刚入门的人来说或许是一个窗口，一个解惑之窗。我要先坚持分享20年，大家来一起见证吧。我不是什么大牛，我其实想做的就是一个传播者。内容可能过于基础，但对于刚入门的人来说或许是一个窗口，一个解惑之窗。我要先坚持分享20年，大家来一起见证吧。</p>
+			<a href="#" onclick="toggle()">Close</a>
+		</div>
+		<script type="text/javascript">
+			function get(item){
+				return document.querySelector(item);
+			}
+			let blur=get('#blur');
+			let popup=get('#popup');
+			function toggle(){
+				
+			  /**
+			   * classList.toggle(类名):没有就添加这个类，有就删除这个类
+			   * 
+			   */
+				blur.classList.toggle('active');
+			    popup.classList.toggle('active');
+			}
+		</script>
+	</body>
+</html>
